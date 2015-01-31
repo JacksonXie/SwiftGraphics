@@ -40,7 +40,7 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
-      buildConfiguration = "Debug">
+      buildConfiguration = "Release">
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -66,9 +66,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "454D550619AA5CE6000E3EB3"
-            BuildableName = "SwiftGraphics.framework"
-            BlueprintName = "SwiftGraphics_OSX"
+            BlueprintIdentifier = "45CFDC9D1A61CE3500053F96"
+            BuildableName = "SwiftGraphics_OSX_UITest.app"
+            BlueprintName = "SwiftGraphics_OSX_UITest"
             ReferencedContainer = "container:SwiftGraphics.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -82,15 +82,16 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "454D550619AA5CE6000E3EB3"
-            BuildableName = "SwiftGraphics.framework"
-            BlueprintName = "SwiftGraphics_OSX"
+            BlueprintIdentifier = "45CFDC9D1A61CE3500053F96"
+            BuildableName = "SwiftGraphics_OSX_UITest.app"
+            BlueprintName = "SwiftGraphics_OSX_UITest"
             ReferencedContainer = "container:SwiftGraphics.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
