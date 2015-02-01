@@ -106,9 +106,11 @@ public func /= (inout lhs:CGPoint, rhs:CGSize) {
     lhs = lhs / rhs
 }
 
+#if SWIFTGRAPHICS
 public extension CGPoint {
     var asSize : CGSize { get { return CGSize(w:x, h:y) } }
 }
+#endif
 
 // MARK: dotProduct and crossProduct
 
@@ -124,6 +126,7 @@ public extension CGPoint {
 
 // MARK: Misc
 
+#if SWIFTGRAPHICS
 public extension CGPoint {
     func clamped(rect:CGRect) -> CGPoint {
         return CGPoint(
@@ -132,6 +135,7 @@ public extension CGPoint {
         )
     }
 }
+#endif
 
 // MARK: Trig
 
@@ -142,6 +146,7 @@ public extension CGPoint {
         y = sin(direction) * magnitude
     }
 
+#if SWIFTGRAPHICS
     var magnitude : CGFloat {
         get {
             return sqrt(x ** 2 + y ** 2)
@@ -150,7 +155,9 @@ public extension CGPoint {
             self = CGPoint(magnitude:v, direction:direction)
         }
     }
+#endif
 
+#if SWIFTGRAPHICS
     var direction : CGFloat {
         get {
             return atan2(self)
@@ -159,13 +166,17 @@ public extension CGPoint {
             self = CGPoint(magnitude:magnitude, direction:v)
         }
     }
+#endif
 
+#if SWIFTGRAPHICS
     var square : CGFloat {
         get {
             return x ** 2 + y ** 2
         }
     }
+#endif
 
+#if SWIFTGRAPHICS
     var normalized : CGPoint { get {
         let len = magnitude
         return len ==% 0 ? self : CGPoint(x:x / len, y:y / len)
@@ -176,17 +187,11 @@ public extension CGPoint {
             return CGPoint(x:-y, y:x)
         }
     }
+#endif
 
     var isZero: Bool {
         get {
             return x == 0 && y == 0
-        }
-    }
-
-    // TODO: It might be better to remove this and let users use ==% CGPointZero
-    var isFuzzyZero: Bool {
-        get {
-            return self ==% CGPointZero
         }
     }
 }
@@ -222,10 +227,12 @@ public func round(value:CGPoint, decimal:Int) -> CGPoint {
 
 public extension CGPoint {
 
+#if SWIFTGRAPHICS
     func distanceTo(point:CGPoint) -> CGFloat {
         return (self - point).magnitude
     }
-    
+#endif
+
     func distanceTo(p1:CGPoint, p2:CGPoint) -> CGFloat {
         return distanceToBeeline(p1, p2:p2).0
     }
@@ -257,19 +264,24 @@ public extension CGPoint {
 
 // MARK: Equatable
 
+#if SWIFTGRAPHICS
 extension CGPoint : FuzzyEquatable {
 }
 
 public func ==% (lhs:CGPoint, rhs:CGPoint) -> Bool {
     return (lhs - rhs).isZero
 }
+#endif
 
+
+#if SWIFTGRAPHICS
 /**
  Return true if a, b, and c all lie on the same line.
  */
 public func collinear(a:CGPoint, b:CGPoint, c:CGPoint) -> Bool {
     return (b.x - a.x) * (c.y - a.y) ==% (c.x - a.x) * (b.y - a.y)
 }
+#endif
 
 /**
  Return true if c is near to the beeline a b.

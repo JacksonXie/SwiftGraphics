@@ -116,11 +116,14 @@ public extension BezierCurve {
 
 public extension BezierCurve {
 
+#if SWIFTGRAPHICS
     public var simpleBounds: CGRect { get {
         return CGRect.unionOfPoints(points)
     }}
-    
+#endif
+
     //! Compute the bounding box based on the straightened curve, for best fit
+#if SWIFTGRAPHICS
     public var boundingBox: CGRect { get {
         if self.controls.count == 1 {
             return increasedOrder().boundingBox
@@ -166,7 +169,8 @@ public extension BezierCurve {
         
         return bbox
     }}
-    
+#endif
+
     // compute the value for the cubic bezier function at time=t
     private func computeCubicBaseValue(t:CGFloat, a:CGFloat, b:CGFloat, c:CGFloat, d:CGFloat) -> CGFloat {
         let v  = 1-t
@@ -193,14 +197,17 @@ public extension BezierCurve {
     
 // MARK: isStraight and length
     
+#if SWIFTGRAPHICS
     public var isStraight: Bool { get {
         let pts = points
         return collinear(pts[0], pts[2], pts[1])
             || (pts.count == 4 && collinear(pts[0], pts[2], pts[3]))
         }}
+#endif
     
     // Gauss quadrature for cubic Bezier curves http://processingjs.nihongoresources.com/bezierinfo/
     
+#if SWIFTGRAPHICS
     public var length: CGFloat { get {
         if self.isStraight {
             return self.start!.distanceTo(self.end)
@@ -219,8 +226,9 @@ public extension BezierCurve {
         }
         
         return z2 * sum
-        }}
-    
+    }}
+#endif
+
     private func base3(t:CGFloat, _ p1:CGFloat, _ p2:CGFloat, _ p3:CGFloat, _ p4:CGFloat) -> CGFloat {
         let t1 = -3*p1 + 9*p2 - 9*p3 + 3*p4
         let t2 = t*t1 + 6*p1 - 12*p2 + 6*p3

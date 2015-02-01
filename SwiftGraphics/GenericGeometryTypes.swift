@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 schwa.io. All rights reserved.
 //
 
+import CoreGraphics
+
 // MARK: A generic arithmetic type.
 
 /*
@@ -15,21 +17,21 @@
     Look for this comment to see places where I've had to do this: "(Unnecessarily specify CGFloat to prevent compiler from complaining about complexity while inferring type)"
 */
 
-public protocol ArithmeticType: Comparable {
-    func +(lhs: Self, rhs: Self) -> Self
-    func -(lhs: Self, rhs: Self) -> Self
-    func *(lhs: Self, rhs: Self) -> Self
-    func /(lhs: Self, rhs: Self) -> Self
-}
+//public protocol ArithmeticType: Comparable {
+//    func +(lhs: Self, rhs: Self) -> Self
+//    func -(lhs: Self, rhs: Self) -> Self
+//    func *(lhs: Self, rhs: Self) -> Self
+//    func /(lhs: Self, rhs: Self) -> Self
+//}
 
-extension Int: ArithmeticType {
-}
-
-extension UInt: ArithmeticType {
-}
-
-extension CGFloat: ArithmeticType {
-}
+//extension Int: ArithmeticType {
+//}
+//
+//extension UInt: ArithmeticType {
+//}
+//
+//extension CGFloat: ArithmeticType {
+//}
 
 // MARK: Protocols with associated types
 
@@ -62,7 +64,7 @@ public protocol RectType {
 
 // MARK: Generic Points
 
-public struct GenericPoint <T:ArithmeticType> {
+public struct GenericPoint <T:Comparable> {
     public let x:T
     public let y:T
 
@@ -78,7 +80,7 @@ extension GenericPoint: PointType {
 
 // MARK: Generic Sizes
 
-public struct GenericSize <T:ArithmeticType> {
+public struct GenericSize <T:Comparable> {
     public let width:T
     public let height:T
 

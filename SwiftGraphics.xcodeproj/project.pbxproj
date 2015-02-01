@@ -73,6 +73,7 @@
 		4515826219C9F83300856C91 /* Private.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4515826019C9F83300856C91 /* Private.swift */; };
 		451835E21A73072E006B123B /* Lerp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451835E11A73072E006B123B /* Lerp.swift */; };
 		451835E31A73072E006B123B /* Lerp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451835E11A73072E006B123B /* Lerp.swift */; };
+		452B49841A7E9EA100B4C836 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4563EFD81A7E9B7000019643 /* Matrix.swift */; };
 		4537991A19AA6C37004DF99E /* CGPointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4537991919AA6C37004DF99E /* CGPointTests.swift */; };
 		4537991D19AA788B004DF99E /* CGSizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4537991C19AA788B004DF99E /* CGSizeTests.swift */; };
 		453997C91A61F89F00572E47 /* BouncingBalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453997C31A61F89F00572E47 /* BouncingBalls.swift */; };
@@ -93,6 +94,11 @@
 		455621931A6A2EAC00EB181E /* Dragging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455621921A6A2EAC00EB181E /* Dragging.swift */; };
 		45563F2E19B1047E003B1639 /* CColorConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 45563F2C19B1047E003B1639 /* CColorConverter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		45563F2F19B1047E003B1639 /* CColorConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 45563F2D19B1047E003B1639 /* CColorConverter.m */; };
+		455E5F3D1A7DBBA8009CD251 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455E5F3C1A7DBBA8009CD251 /* main.swift */; };
+		455E5F411A7DBBB5009CD251 /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459EE5E019AEC5130012E023 /* CGPoint.swift */; };
+		455E5F421A7DBC56009CD251 /* BezierCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459EE5DC19AEC5130012E023 /* BezierCurve.swift */; };
+		455E5F441A7DBC8D009CD251 /* GenericGeometryTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A14E1B1A69D582006F4949 /* GenericGeometryTypes.swift */; };
+		455E5F451A7DBE87009CD251 /* BezierCurve+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BF437D1A64FACB00132343 /* BezierCurve+Extensions.swift */; };
 		4563EFD91A7E9B7000019643 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4563EFD81A7E9B7000019643 /* Matrix.swift */; };
 		4563EFDA1A7E9B7000019643 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4563EFD81A7E9B7000019643 /* Matrix.swift */; };
 		456877E219B6857B004BEFD6 /* CoordinateSystems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456877E119B6857B004BEFD6 /* CoordinateSystems.swift */; };
@@ -253,6 +259,18 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		455E5F381A7DBBA8009CD251 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0205AE491A6678D3006444C8 /* CGPoint+Ruler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Ruler.swift"; sourceTree = "<group>"; };
 		029651A91A6366FA0099DA1C /* CDisplayLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDisplayLink.h; sourceTree = "<group>"; };
@@ -326,6 +344,8 @@
 		45563F2D19B1047E003B1639 /* CColorConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CColorConverter.m; sourceTree = "<group>"; };
 		45592F501A61B65200F496D2 /* TransformTest.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TransformTest.playground; sourceTree = "<group>"; };
 		455D0A5D1A64A3EF00189879 /* Color.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Color.playground; sourceTree = "<group>"; };
+		455E5F3A1A7DBBA8009CD251 /* SwiftGraphics_OSX_CLI */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftGraphics_OSX_CLI; sourceTree = BUILT_PRODUCTS_DIR; };
+		455E5F3C1A7DBBA8009CD251 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		4563EFD81A7E9B7000019643 /* Matrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
 		456877E119B6857B004BEFD6 /* CoordinateSystems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinateSystems.swift; sourceTree = "<group>"; };
 		456C315B19C65B0E003AA1DF /* Ellipse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ellipse.swift; sourceTree = "<group>"; };
@@ -426,6 +446,13 @@
 			files = (
 				45B32D4D1A637E74004FD3FB /* libz.dylib in Frameworks */,
 				454FE68319C7799B002E4DEF /* SwiftGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		455E5F371A7DBBA8009CD251 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -570,6 +597,7 @@
 				454D551319AA5CE6000E3EB3 /* SwiftGraphics_UnitTests */,
 				450155801A62F9F600D7FB7B /* SwiftGraphicsPlayground_OSX_UnitTests */,
 				45CFDC9F1A61CE3500053F96 /* SwiftGraphics_OSX_UITest */,
+				455E5F3B1A7DBBA8009CD251 /* SwiftGraphics_OSX_CLI */,
 				4514F5F71A61D2D800CC9C26 /* Frameworks */,
 				454D550819AA5CE6000E3EB3 /* Products */,
 			);
@@ -584,6 +612,7 @@
 				454FE66219C77031002E4DEF /* SwiftGraphicsPlayground.framework */,
 				45CFDC9E1A61CE3500053F96 /* SwiftGraphics_OSX_UITest.app */,
 				4501557F1A62F9F600D7FB7B /* SwiftGraphicsPlayground_OSX_UnitTests.xctest */,
+				455E5F3A1A7DBBA8009CD251 /* SwiftGraphics_OSX_CLI */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -686,6 +715,14 @@
 				4556218F1A6A2DD800EB181E /* Scratch.swift */,
 			);
 			path = HandleEditor;
+			sourceTree = "<group>";
+		};
+		455E5F3B1A7DBBA8009CD251 /* SwiftGraphics_OSX_CLI */ = {
+			isa = PBXGroup;
+			children = (
+				455E5F3C1A7DBBA8009CD251 /* main.swift */,
+			);
+			path = SwiftGraphics_OSX_CLI;
 			sourceTree = "<group>";
 		};
 		458C59011A7409E200E993A6 /* Will Deprecate */ = {
@@ -965,6 +1002,23 @@
 			productReference = 454FE66219C77031002E4DEF /* SwiftGraphicsPlayground.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		455E5F391A7DBBA8009CD251 /* SwiftGraphics_OSX_CLI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 455E5F401A7DBBA8009CD251 /* Build configuration list for PBXNativeTarget "SwiftGraphics_OSX_CLI" */;
+			buildPhases = (
+				455E5F361A7DBBA8009CD251 /* Sources */,
+				455E5F371A7DBBA8009CD251 /* Frameworks */,
+				455E5F381A7DBBA8009CD251 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftGraphics_OSX_CLI;
+			productName = SwiftGraphics_OSX_CLI;
+			productReference = 455E5F3A1A7DBBA8009CD251 /* SwiftGraphics_OSX_CLI */;
+			productType = "com.apple.product-type.tool";
+		};
 		45CFDC9D1A61CE3500053F96 /* SwiftGraphics_OSX_UITest */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 45CFDCB71A61CE3500053F96 /* Build configuration list for PBXNativeTarget "SwiftGraphics_OSX_UITest" */;
@@ -1023,6 +1077,9 @@
 					454FE66119C77031002E4DEF = {
 						CreatedOnToolsVersion = 6.1;
 					};
+					455E5F391A7DBBA8009CD251 = {
+						CreatedOnToolsVersion = 6.2;
+					};
 					45B8AE8F19BCE56E00C61A3F = {
 						CreatedOnToolsVersion = 6.0;
 					};
@@ -1054,6 +1111,7 @@
 				454FE66119C77031002E4DEF /* SwiftGraphicsPlayground */,
 				45CFDC9D1A61CE3500053F96 /* SwiftGraphics_OSX_UITest */,
 				4501557E1A62F9F600D7FB7B /* SwiftGraphicsPlayground_OSX_UnitTests */,
+				455E5F391A7DBBA8009CD251 /* SwiftGraphics_OSX_CLI */,
 			);
 		};
 /* End PBXProject section */
@@ -1207,6 +1265,19 @@
 				450717091A6B7F0700E86EB4 /* CGTypes+String.swift in Sources */,
 				454FE68019C77455002E4DEF /* SwiftGraphicsPlayground.swift in Sources */,
 				450717071A6B7EBA00E86EB4 /* Bitmap.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		455E5F361A7DBBA8009CD251 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				452B49841A7E9EA100B4C836 /* Matrix.swift in Sources */,
+				455E5F451A7DBE87009CD251 /* BezierCurve+Extensions.swift in Sources */,
+				455E5F411A7DBBB5009CD251 /* CGPoint.swift in Sources */,
+				455E5F441A7DBC8D009CD251 /* GenericGeometryTypes.swift in Sources */,
+				455E5F421A7DBC56009CD251 /* BezierCurve.swift in Sources */,
+				455E5F3D1A7DBBA8009CD251 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1589,6 +1660,25 @@
 			};
 			name = Release;
 		};
+		455E5F3E1A7DBBA8009CD251 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		455E5F3F1A7DBBA8009CD251 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		45B8AE9119BCE56E00C61A3F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1723,6 +1813,15 @@
 			buildConfigurations = (
 				454FE67619C77031002E4DEF /* Debug */,
 				454FE67719C77031002E4DEF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		455E5F401A7DBBA8009CD251 /* Build configuration list for PBXNativeTarget "SwiftGraphics_OSX_CLI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				455E5F3E1A7DBBA8009CD251 /* Debug */,
+				455E5F3F1A7DBBA8009CD251 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
