@@ -22,14 +22,22 @@ class ScratchWindowController: NSWindowController {
         super.windowDidLoad()
 
         model = Model()
-
-        // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
     }
 
     @IBAction func insertShape(sender:AnyObject!) {
         println("Insert rectangle")
 
-        model.addThing(Thing(geometry:Rectangle(frame:CGRect(x:0, y:0, width:100, height:100))))
+        var mouseLocation = self.window!.mouseLocationOutsideOfEventStream
+        let view = contentViewController!.view
+        mouseLocation = view.convertPoint(mouseLocation, fromView: nil)
+
+        mouseLocation = mouseLocation.clamped(view.bounds.insetted(dx: 50, dy: 50))
+
+        let thing = Thing(geometry:Rectangle(frame:CGRect(size:CGSize(w:100, h:100))))
+        thing.center = mouseLocation
+
+
+        model.addThing(thing)
 
     }
 

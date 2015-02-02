@@ -29,8 +29,10 @@ class Thing: HitTestable, Drawable {
     func drawInContext(context:CGContextRef) {
         let localTransform = transform + CGAffineTransform(translation: frame.origin)
         context.with(localTransform) {
+            context.strokeColor = CGColor.greenColor().withAlpha(0.5)
             self.geometry.drawInContext(context)
         }
+        context.strokeColor = CGColor.redColor()
         context.strokeRect(frame)
     }
 
