@@ -21,6 +21,23 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to tear down your application
     }
 
+    @IBAction func dumpResponderChain(sender:AnyObject?) {
 
+        let window = NSApplication.sharedApplication().mainWindow
+
+        let firstResponder = window?.firstResponder
+        let contentView = window?.contentViewController?.view
+
+
+
+        var responder:NSResponder? = contentView
+        while responder != nil {
+            println(responder!)
+            if responder === firstResponder {
+                println("^ FIRST RESPONDER")
+            }
+            responder = responder!.nextResponder
+        }
+    }
 }
 

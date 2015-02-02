@@ -10,25 +10,43 @@ import Cocoa
 
 import SwiftGraphics
 
-class Model {
-    var things:[Thing]
-    var selectedThings:NSMutableIndexSet = NSMutableIndexSet()
 
-    init() {
-        things = [
-            Thing(geometry:Rectangle(frame:CGRect(x:0, y:0, width:100, height:100))),
-        ]
-    }
+class ScratchView: NSView {
 
-    func objectForPoint(point:CGPoint) -> Thing? {
-        for (index, thing) in enumerate(things) {
-            if thing.contains(point) {
-                return thing
-            }
+    var model:Model! {
+        didSet {
+            model.addObserver(self, forKeyPath: "things", options: NSKeyValueObservingOptions(), context: nil)
+            dragging.model = model
         }
-        return nil
     }
+    var dragging = Dragging()
+
+    required init?(coder: NSCoder) {
+        super.init(coder:coder)
+
+        dragging.view = self
+    }
+
+    override func drawRect(dirtyRect: NSRect) {
+        super.drawRect(dirtyRect)
+
+        let context = NSGraphicsContext.currentContext()!.CGContext
+
+        for (index, thing) in enumerate(model.things) {
+            if model.selectedThings.containsIndex(index) {
+                context.strokeColor = CGColor.redColor()
+            }
+            thing.drawInContext(context)
+        }
+    }
+
+    override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>) {
+        self.needsDisplay = true
+    }
+
 }
+
+// MARK: -
 
 class Dragging: NSObject {
 
@@ -86,30 +104,3 @@ class Dragging: NSObject {
 
 }
 
-
-class ScratchView: NSView {
-
-    var model = Model()
-    var dragging = Dragging()
-
-    required init?(coder: NSCoder) {
-        super.init(coder:coder)
-
-        dragging.view = self
-        dragging.model = model
-    }
-
-    override func drawRect(dirtyRect: NSRect) {
-        super.drawRect(dirtyRect)
-
-        let context = NSGraphicsContext.currentContext()!.CGContext
-
-        for (index, thing) in enumerate(model.things) {
-            if model.selectedThings.containsIndex(index) {
-                context.strokeColor = CGColor.redColor()
-            }
-            thing.drawInContext(context)
-        }
-    }
-
-}

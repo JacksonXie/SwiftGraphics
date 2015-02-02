@@ -93,8 +93,6 @@
 		455621931A6A2EAC00EB181E /* Dragging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455621921A6A2EAC00EB181E /* Dragging.swift */; };
 		45563F2E19B1047E003B1639 /* CColorConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 45563F2C19B1047E003B1639 /* CColorConverter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		45563F2F19B1047E003B1639 /* CColorConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 45563F2D19B1047E003B1639 /* CColorConverter.m */; };
-		4563EFD91A7E9B7000019643 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4563EFD81A7E9B7000019643 /* Matrix.swift */; };
-		4563EFDA1A7E9B7000019643 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4563EFD81A7E9B7000019643 /* Matrix.swift */; };
 		455AC2C81A76130B00BCC373 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455AC2C71A76130B00BCC373 /* AppDelegate.swift */; };
 		455AC2CA1A76130B00BCC373 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455AC2C91A76130B00BCC373 /* ViewController.swift */; };
 		455AC2CC1A76130B00BCC373 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 455AC2CB1A76130B00BCC373 /* Images.xcassets */; };
@@ -102,6 +100,8 @@
 		455AC2E61A76133A00BCC373 /* SwiftGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 454D550719AA5CE6000E3EB3 /* SwiftGraphics.framework */; };
 		455AC2E71A76133A00BCC373 /* SwiftGraphicsPlayground.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 454FE66219C77031002E4DEF /* SwiftGraphicsPlayground.framework */; };
 		455AC2E91A76135600BCC373 /* ScratchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455AC2E81A76135600BCC373 /* ScratchView.swift */; };
+		4563EFD91A7E9B7000019643 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4563EFD81A7E9B7000019643 /* Matrix.swift */; };
+		4563EFDA1A7E9B7000019643 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4563EFD81A7E9B7000019643 /* Matrix.swift */; };
 		456877E219B6857B004BEFD6 /* CoordinateSystems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456877E119B6857B004BEFD6 /* CoordinateSystems.swift */; };
 		456C315C19C65B0E003AA1DF /* Ellipse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456C315B19C65B0E003AA1DF /* Ellipse.swift */; };
 		456C315D19C65B0E003AA1DF /* Ellipse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456C315B19C65B0E003AA1DF /* Ellipse.swift */; };
@@ -163,6 +163,8 @@
 		45C11B5B1A69751B0029A61C /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C11B5A1A69751B0029A61C /* Triangle.swift */; };
 		45C4C35C1A7DA8EF0036EE2B /* ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C4C35B1A7DA8EF0036EE2B /* ProjectTests.swift */; };
 		45C6DC751A13E59C004C4693 /* TransformTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C6DC741A13E59C004C4693 /* TransformTests.swift */; };
+		45CA2A621A7EF4AE008DC058 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CA2A611A7EF4AE008DC058 /* Model.swift */; };
+		45CA2A681A7EFC83008DC058 /* ScratchWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CA2A671A7EFC83008DC058 /* ScratchWindowController.swift */; };
 		45CFDC661A61CA0700053F96 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CFDC651A61CA0700053F96 /* Utilities.swift */; };
 		45CFDC691A61CB4500053F96 /* GrahamScan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CFDC671A61CB3000053F96 /* GrahamScan.swift */; };
 		45CFDC6A1A61CB4500053F96 /* GrahamScan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CFDC671A61CB3000053F96 /* GrahamScan.swift */; };
@@ -400,6 +402,8 @@
 		45C11B5A1A69751B0029A61C /* Triangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		45C4C35B1A7DA8EF0036EE2B /* ProjectTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectTests.swift; sourceTree = "<group>"; };
 		45C6DC741A13E59C004C4693 /* TransformTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformTests.swift; sourceTree = "<group>"; };
+		45CA2A611A7EF4AE008DC058 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		45CA2A671A7EFC83008DC058 /* ScratchWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScratchWindowController.swift; sourceTree = "<group>"; };
 		45CFDC651A61CA0700053F96 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		45CFDC671A61CB3000053F96 /* GrahamScan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrahamScan.swift; sourceTree = "<group>"; };
 		45CFDC6B1A61CB6800053F96 /* ConvexHull.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvexHull.swift; sourceTree = "<group>"; };
@@ -734,6 +738,8 @@
 			children = (
 				455AC2C71A76130B00BCC373 /* AppDelegate.swift */,
 				455AC2C91A76130B00BCC373 /* ViewController.swift */,
+				45CA2A671A7EFC83008DC058 /* ScratchWindowController.swift */,
+				45CA2A611A7EF4AE008DC058 /* Model.swift */,
 				455AC2E81A76135600BCC373 /* ScratchView.swift */,
 				45B78E621A7702F80058B3A0 /* Scratch.swift */,
 				455AC2CB1A76130B00BCC373 /* Images.xcassets */,
@@ -1309,9 +1315,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45CA2A621A7EF4AE008DC058 /* Model.swift in Sources */,
 				45B78E631A7702F80058B3A0 /* Scratch.swift in Sources */,
 				455AC2CA1A76130B00BCC373 /* ViewController.swift in Sources */,
 				455AC2C81A76130B00BCC373 /* AppDelegate.swift in Sources */,
+				45CA2A681A7EFC83008DC058 /* ScratchWindowController.swift in Sources */,
 				455AC2E91A76135600BCC373 /* ScratchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1717,6 +1725,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1726,6 +1735,7 @@
 				INFOPLIST_FILE = SwiftGraphics_OSX_Scratch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -1733,6 +1743,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
