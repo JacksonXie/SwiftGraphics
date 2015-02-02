@@ -24,8 +24,30 @@ class ScratchWindowController: NSWindowController {
         model = Model()
     }
 
-    @IBAction func insertShape(sender:AnyObject!) {
-        println("Insert rectangle")
+    @IBAction func insertShape(sender:AnyObject?) {
+
+        var type:String!
+        if let toolbarItem = sender as? NSToolbarItem {
+            type = toolbarItem.userInfo as? String
+        }
+        else if let toolbarItem = sender as? NSMenuItem {
+            type = toolbarItem.userInfo as? String
+        }
+
+        assert(type != nil)
+
+        var geometry:Thing.ThingType!
+        switch type {
+            case "rectangle":
+                geometry = Rectangle(frame:CGRect(size:CGSize(w:100, h:100)))
+            case "circle":
+                geometry = Circle(center:CGPoint(x:50, y:50), diameter:100)
+            case "triangle":
+                geometry = Triangle(rect:CGRect(size:CGSize(w:100, h:100)))
+            default:
+                break
+        }
+
 
         var mouseLocation = self.window!.mouseLocationOutsideOfEventStream
         let view = contentViewController!.view
@@ -33,12 +55,9 @@ class ScratchWindowController: NSWindowController {
 
         mouseLocation = mouseLocation.clamped(view.bounds.insetted(dx: 50, dy: 50))
 
-        let thing = Thing(geometry:Rectangle(frame:CGRect(size:CGSize(w:100, h:100))))
+        let thing = Thing(model:model, geometry:geometry)
         thing.center = mouseLocation
 
-
-        model.addThing(thing)
-
+        model.addObject(thing)
     }
-
 }

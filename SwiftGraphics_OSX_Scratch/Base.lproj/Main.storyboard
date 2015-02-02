@@ -603,6 +603,9 @@
                                 <menu key="submenu" title="Editor" id="wXQ-xs-oN1">
                                     <items>
                                         <menuItem title="Insert Rectangle" keyEquivalent="R" id="USJ-S1-2fC" userLabel="Insert Rectangle">
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="userInfo" value="rectangle"/>
+                                            </userDefinedRuntimeAttributes>
                                             <connections>
                                                 <action selector="insertShape:" target="Ady-hI-5gd" id="ehB-OX-fA5"/>
                                             </connections>
@@ -687,13 +690,34 @@
                                 <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="vNa-SM-r5e"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="le0-nj-gz1"/>
                                 <toolbarItem implicitItemIdentifier="D5FA22EE-7E7D-4BE6-91E4-6F22064332F5" label="Rectangle" paletteLabel="Rectangle" tag="-1" image="ToolbarIconRectangle" id="9cP-jR-9WE">
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="userInfo" value="rectangle"/>
+                                    </userDefinedRuntimeAttributes>
                                     <connections>
                                         <action selector="insertShape:" target="Oky-zY-oP4" id="r6M-AR-8D8"/>
+                                    </connections>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="B88F4076-1100-42F9-81FA-91592BC06A04" label="Circle" paletteLabel="Circle" tag="-1" image="ToolbarIconCircle" id="NH0-vW-xO5">
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="userInfo" value="circle"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="insertShape:" target="Oky-zY-oP4" id="OCz-tW-kdO"/>
+                                    </connections>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="DD23FCAE-903D-4F16-9A3F-75C789FF3850" label="Triangle" paletteLabel="Triangle" tag="-1" image="ToolbarIconTriangle" id="Y4U-2X-sZk">
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="userInfo" value="triangle"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="insertShape:" target="Oky-zY-oP4" id="oMa-hC-EKK"/>
                                     </connections>
                                 </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
                                 <toolbarItem reference="9cP-jR-9WE"/>
+                                <toolbarItem reference="NH0-vW-xO5"/>
+                                <toolbarItem reference="Y4U-2X-sZk"/>
                             </defaultToolbarItems>
                         </toolbar>
                     </window>
@@ -720,6 +744,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ToolbarIconCircle" width="64" height="64"/>
         <image name="ToolbarIconRectangle" width="64" height="64"/>
+        <image name="ToolbarIconTriangle" width="72" height="67"/>
     </resources>
 </document>

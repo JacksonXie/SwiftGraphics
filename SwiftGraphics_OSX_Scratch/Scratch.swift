@@ -8,74 +8,93 @@
 
 import SwiftGraphics
 
-class Thing: HitTestable, Drawable {
+// MARK: -
 
-    typealias ThingType = protocol <HitTestable, Drawable, Geometry>
+var kUserInfoKey:Int = 0
 
-    let geometry:ThingType
-    var transform:CGAffineTransform = CGAffineTransformIdentity
-
-    init(geometry:ThingType) {
-        self.geometry = geometry
-        self.center = geometry.frame.mid
-    }
-
-    var bounds:CGRect { get { return geometry.frame } }
-
-    var center:CGPoint = CGPointZero
-
-    var frame:CGRect { get { return CGRect(center:center, size:bounds.size) } }
-
-    func drawInContext(context:CGContextRef) {
-        let localTransform = transform + CGAffineTransform(translation: frame.origin)
-        context.with(localTransform) {
-            context.strokeColor = CGColor.greenColor().withAlpha(0.5)
-            self.geometry.drawInContext(context)
+extension NSToolbarItem {
+    var userInfo:AnyObject? {
+        get {
+            return getAssociatedObject(self, &kUserInfoKey)
         }
-        context.strokeColor = CGColor.redColor()
-        context.strokeRect(frame)
+        set {
+            // TODO: What about nil
+            setAssociatedObject(self, &kUserInfoKey, newValue!)
+        }
     }
-
-    func contains(point:CGPoint) -> Bool {
-        return (frame * transform).contains(point)
-    }
-
-//    func onEdge(point:CGPoint, lineThickness:CGFloat) -> Bool {
-//        return geometry.onEdge(point, lineThickness: lineThickness)
-//    }
-
-//    var position: CGPoint {
-//        get {
-//            return frame.mid * transform
-//        }
-//        set {
-//            let oldValue = position
-//            let delta = newValue - oldValue
-//            transform = transform + CGAffineTransform(translation: delta)
-//        }
-//    }
-
 }
 
-
-
-extension Rectangle: HitTestable {
-    public func contains(point:CGPoint) -> Bool {
-        return self.frame.contains(point)
+extension NSMenuItem {
+    var userInfo:AnyObject? {
+        get {
+            return getAssociatedObject(self, &kUserInfoKey)
+        }
+        set {
+            // TODO: What about nil
+            setAssociatedObject(self, &kUserInfoKey, newValue!)
+        }
     }
-
-//    // TODO: Move to "EdgeHitTestable" protocol?
-//    public func onEdge(point:CGPoint, lineThickness:CGFloat) -> Bool {
-//        if self.frame.insetted(dx: -lineThickness * 0.5, dy: -lineThickness * 0.5).contains(point) {
-//            return self.frame.insetted(dx: lineThickness * 0.5, dy: lineThickness * 0.5).contains(point) == false
-//        }
-//        return false
-//    }
 }
 
+// MARK: -
 
+extension NSGestureRecognizerState: Printable {
+    public var description:String {
+        get {
+            switch self {
+                case .Possible:
+                    return "Possible"
+                case .Began:
+                    return "Began"
+                case .Changed:
+                    return "Changed"
+                case .Ended:
+                    return "Ended"
+                case .Cancelled:
+                    return "Cancelled"
+                case .Failed:
+                    return "Failed"
+            }
+        }
+    }
+}
 
+// MARK: -
 
+extension Array {
+    func isSorted(isEqual: (T, T) -> Bool, isOrderedBefore: (T, T) -> Bool) -> Bool {
+        let sortedCopy = sorted(isOrderedBefore)
+        for (lhs, rhs) in Zip2(self, sortedCopy) {
+            if isEqual(lhs, rhs) == false {
+                return false
+            }
+        }
+        return true
+    }
+
+    mutating func insert(newElement: T, orderedBefore: (T, T) -> Bool) {
+        for (index, element) in enumerate(self) {
+            if orderedBefore(newElement, element) {
+                insert(newElement, atIndex: index)
+                return
+            }
+        }
+        append(newElement)
+    }
+}
+
+//extension Array {
+//    mutating func removeObjectsAtIndices(indices:NSIndexSet) {
+//        var index = indices.lastIndex
+//
+//        while index != NSNotFound {
+//            removeAtIndex(index)
+//            index = indices.indexLessThanIndex(index)
+//        }
+//    }
+//}
+
+// MARK: -
 
 extension NSIndexSet {
 
@@ -108,9 +127,4 @@ extension NSIndexSet {
             while count > 0
         }
     }
-
-
-
-//getIndexes(buffer, maxCount: 1000, inIndexRange: nil)
-
 }
