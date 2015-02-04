@@ -137,8 +137,11 @@ class Thing: HitTestable, Drawable, Equatable {
     }
 
     func intersects(path:CGPath) -> Bool {
-//        return geometry.intersects(path)
-        return false
+
+        var transform = CGAffineTransform(translation: -frame.origin)
+//        let ptr = UnsafePointer <CGAffineTransform> (transform)
+        let path = CGPathCreateCopyByTransformingPath(path, &transform)
+        return geometry.intersects(path)
     }
 
 }

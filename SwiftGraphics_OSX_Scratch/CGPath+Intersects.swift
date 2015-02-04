@@ -13,17 +13,8 @@ import Accelerate
 
 extension CGPath {
 
-    func intersects(path:CGPath) -> Bool {
-        return false
-    }
-
-    func intersects(rect:CGRect) -> Bool {
-
+    func intersects(drawing:CGContext -> Void) -> Bool {
         let boundingBox = CGPathGetBoundingBox(self)
-
-        if boundingBox.intersects(rect) == false {
-            return false
-        }
 
         var context = CGContext.bitmapContext(boundingBox, color:CGColor.blackColor())
         CGContextSetAllowsAntialiasing(context, false)
@@ -48,7 +39,7 @@ extension CGPath {
         context.setFillColor(CGColor.redColor())
         CGContextFillRect(context, boundingBox)
         context.setFillColor(CGColor.greenColor())
-        CGContextFillRect(context, rect)
+        drawing(context)
 
         for word in buffer {
             if word == fill {
@@ -57,5 +48,28 @@ extension CGPath {
         }
 
         return false
+    }
+
+
+    func intersects(path:CGPath) -> Bool {
+
+        let boundingBox = CGPathGetBoundingBox(self)
+
+        if boundingBox.intersects(CGPathGetBoundingBox(path)) == false {
+            return false
+        }
+
+        return intersects() { CGContextAddPath($0, path); CGContextFillPath($0) }
+    }
+
+    func intersects(rect:CGRect) -> Bool {
+
+        let boundingBox = CGPathGetBoundingBox(self)
+
+        if boundingBox.intersects(rect) == false {
+            return false
+        }
+
+        return intersects() { CGContextFillRect($0, rect) }
     }
 }

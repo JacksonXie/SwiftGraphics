@@ -125,7 +125,7 @@ extension Circle: HitTestable {
     }
 
     public func intersects(path:CGPath) -> Bool {
-        return false
+        return cgpath.intersects(path)
     }
 
     public func intersects(lineSegment:LineSegment) -> Bool {
@@ -181,6 +181,6 @@ extension Triangle: HitTestable {
     }
 
     public func intersects(path:CGPath) -> Bool {
-        return false
+        return cgpath.intersects(path)
     }
 }

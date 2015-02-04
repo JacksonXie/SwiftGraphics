@@ -31,7 +31,7 @@ class SelectionMarquee {
         }
     }
 
-    var mode = Mode.rectangular
+    var mode = Mode.polygonal
     var value = Value.empty
 
     var layer:CAShapeLayer
